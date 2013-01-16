@@ -1,3 +1,16 @@
+2013-01-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version): 0.0.2
+
+	* DESCRIPTION (Depends): Versioned Depends: on xts to ensure we a
+	version greater than 0.9-1 (currently on CRAN) with corrected init.c
+
+	* src/xtsMod.cpp:
+	  o Import stubs have been moved into xts where they belong
+	  o New functions for coredata, merge, lag now that xts exports'em
+
+	* tests/check.R: Added minimal tests for new functionality
+
 2013-01-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version): 0.0.1

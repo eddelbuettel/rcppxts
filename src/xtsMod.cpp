@@ -4,7 +4,7 @@
 //
 // Copyright (C) 2012  Dirk Eddelbuettel
 //
-// This file is part of RcppCNPy.
+// This file is part of RcppXts.
 //
 // RcppXts is free software: you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by
@@ -30,35 +30,16 @@ extern "C" {
     #include <xts_stubs.c>      // stubs + automatic registration -- no linking
     #undef class
 
-    // We need R_GetCCallable() for the three (of six total in init.c) that did
-    // not already have such a R_GetCCallable() in xts_stubs.c
+    // We need R_GetCCallable() for the three (of six total in init.c)
+    // that did not already have such a R_GetCCallable() in
+    // xts_stubs.c -- currently xts_stub.c has: isXts, do_is_ordered, naCheck
 
-    SEXP coredata(SEXP x) {
-        static SEXP(*fun)(SEXP) = NULL;
-        if (fun == NULL) fun = (SEXP(*)(SEXP)) R_GetCCallable("xts","coredata");
-        return fun(x, y);
-    }
 
-    SEXP tryXts(SEXP x) {
-        static SEXP(*fun)(SEXP) = NULL;
-        if (fun == NULL) fun = (SEXP(*)(SEXP)) R_GetCCallable("xts","tryXts");
-        return fun(x);
-    }
-
-    SEXP rbindXts(SEXP x) {
-        static SEXP(*fun)(SEXP) = NULL;
-        if (fun == NULL) fun = (SEXP(*)(SEXP)) R_GetCCallable("xts","rbindXts");
-        return fun(x);
-    }
 }
 
-bool wrapIsXts(SEXP x) {        	// wrapped so that we get a bool
-    return isXts(x);
-}
-
-bool wrapNaCheck(SEXP x, SEXP y) {      // wrapped so that we get a bool 
-    return naCheck(x, y);
-}
+// wrapped so that we get a bool instead of int
+bool wrapIsXts(SEXP x)           { return isXts(x);      }
+bool wrapNaCheck(SEXP x, SEXP y) { return naCheck(x, y); }
 
 RCPP_MODULE(xts) {
 
@@ -71,11 +52,6 @@ RCPP_MODULE(xts) {
                           Named("strictly") = true),
              "Tests whether object is (strictly) (increasing) ordered");
 
-    function("coredata_",
-             &coredata,         // see xts's src/init.c, and above
-             List::create(Named("x")),
-             "Extract the coredata from xts object");
-
     function("isXts_",
              &wrapIsXts,   // could also wrap xts function here via &isXts
              List::create(Named("x")),
@@ -86,17 +62,25 @@ RCPP_MODULE(xts) {
              List::create(Named("x")),
              "Calls try.xts()");
 
-#if 0
-    function("rbindXts",
-             &rbindXts,
-             List::create(Named("x")),
-             "Combine xts objects rowwise");
-#endif
+    function("rbindXts_",
+             &do_rbind_xts,
+             List::create(Named("x"), Named("y"), Named("dup")),
+             "Combine two xts objects row-wise");
 
     function("naCheck_",
              &wrapNaCheck,
              List::create(Named("x"),
                           Named("check") = true),
              "Tests whether object contains non-leading NA values"); 
+
+    function("coredata_",
+             &coredata_xts,         // see xts's src/init.c, and above
+             List::create(Named("x")),
+             "Extract the coredata from xts object");
+
+    function("lagXts_",
+             &lagXts,
+             List::create(Named("x"), Named("k"), Named("pad")),
+             "Extract the coredata from xts object");
 
 }
