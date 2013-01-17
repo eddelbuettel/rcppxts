@@ -1,3 +1,14 @@
+2013-01-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version): 0.0.3
+
+	* DESCRIPTION (Depends): Increased to xts 0.9-1.2 which new xtsAPI.h
+
+	* src/xtsMod.cpp (RCPP_MODULE): Reflect new xtsAPI.h and new function
+	names in the xts API, renamed the created R functions accordingly
+	* tests/check.R: Updated to new function names
+	* man/RcppXts-package.Rd: Idem
+
 2013-01-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version): 0.0.2

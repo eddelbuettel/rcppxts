@@ -2,7 +2,7 @@
 //
 // xtsMod.cpp: Rcpp R/C++ modules interface to xts
 //
-// Copyright (C) 2012  Dirk Eddelbuettel
+// Copyright (C) 2013  Dirk Eddelbuettel
 //
 // This file is part of RcppXts.
 //
@@ -25,61 +25,53 @@
 // at the end of init.c in the xts sources
 
 extern "C" {
-    #define class xts_class
-    #include <xts.h>    	// xts header
-    #include <xts_stubs.c>      // stubs + automatic registration -- no linking
-    #undef class
-
-    // We need R_GetCCallable() for the three (of six total in init.c)
-    // that did not already have such a R_GetCCallable() in
-    // xts_stubs.c -- currently xts_stub.c has: isXts, do_is_ordered, naCheck
-
-
+    #include <xtsAPI.h>    	// xts headers and exported functions
 }
 
 // wrapped so that we get a bool instead of int
-bool wrapIsXts(SEXP x)           { return isXts(x);      }
-bool wrapNaCheck(SEXP x, SEXP y) { return naCheck(x, y); }
+bool xtsIsWrap(SEXP x)              { return xtsIs(x);         }
+bool xtsNaCheckWrap(SEXP x, SEXP y) { return xtsNaCheck(x, y); }
 
 RCPP_MODULE(xts) {
 
     using namespace Rcpp;
 
-    function("isOrdered_",
-             &do_is_ordered,
+    function("xtsIs",
+             &xtsIsWrap,   // could also wrap xts function here via &isXts
+             List::create(Named("x")),
+             "Tests whether object is of xts type");
+
+    function("xtsIsOrdered",
+             &xtsIsOrdered,
              List::create(Named("x"),
                           Named("increasing") = true, 
                           Named("strictly") = true),
              "Tests whether object is (strictly) (increasing) ordered");
 
-    function("isXts_",
-             &wrapIsXts,   // could also wrap xts function here via &isXts
-             List::create(Named("x")),
-             "Tests whether object is of xts type");
-
-    function("tryXts_",
-             &tryXts,
-             List::create(Named("x")),
-             "Calls try.xts()");
-
-    function("rbindXts_",
-             &do_rbind_xts,
-             List::create(Named("x"), Named("y"), Named("dup")),
-             "Combine two xts objects row-wise");
-
-    function("naCheck_",
-             &wrapNaCheck,
+    function("xtsNaCheck",
+             &xtsNaCheckWrap,
              List::create(Named("x"),
                           Named("check") = true),
              "Tests whether object contains non-leading NA values"); 
 
-    function("coredata_",
-             &coredata_xts,         // see xts's src/init.c, and above
+
+    function("xtsTry",
+             &xtsTry,
+             List::create(Named("x")),
+             "Calls try.xts()");
+
+    function("xtsRbind",
+             &xtsRbind,
+             List::create(Named("x"), Named("y"), Named("dup")),
+             "Combine two xts objects row-wise");
+
+    function("xtsCoredata",
+             &xtsCoredata,
              List::create(Named("x")),
              "Extract the coredata from xts object");
 
-    function("lagXts_",
-             &lagXts,
+    function("xtsLag",
+             &xtsLag,
              List::create(Named("x"), Named("k"), Named("pad")),
              "Extract the coredata from xts object");
 
