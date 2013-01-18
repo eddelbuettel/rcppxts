@@ -1,7 +1,7 @@
 Package: RcppXts
 Type: Package
 Title: Interface the xts API via Rcpp
-Version: 0.0.3
+Version: 0.0.4
 Date: $Date$
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
@@ -11,6 +11,6 @@ Description: This package provides access to some of the C level functions of
  In its current state, the package is mostly a proof-of-concept to support
  adding useful functions, and does not yet add any of its own.
 License: GPL (>= 2)
-Depends: methods, Rcpp (>= 0.10.2), xts (>= 0.9-1.2)
+Depends: methods, Rcpp (>= 0.10.2), xts (>= 0.9-2)
 LinkingTo: Rcpp, xts
 RcppModules: xts

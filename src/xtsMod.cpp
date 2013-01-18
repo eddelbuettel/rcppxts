@@ -21,12 +21,7 @@
 
 #include <Rcpp.h>               // need to include the main Rcpp header file only
 
-// what is in xts.h does not matter; what matters is what has been 'registered' 
-// at the end of init.c in the xts sources
-
-extern "C" {
-    #include <xtsAPI.h>    	// xts headers and exported functions
-}
+#include <xtsAPI.h>    		// xts exported functions
 
 // wrapped so that we get a bool instead of int
 bool xtsIsWrap(SEXP x)              { return xtsIs(x);         }
