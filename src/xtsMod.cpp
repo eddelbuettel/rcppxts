@@ -70,4 +70,37 @@ RCPP_MODULE(xts) {
              List::create(Named("x"), Named("k"), Named("pad")),
              "Extract the coredata from xts object");
 
+    function("xtsMakeIndexUnique",
+             &xtsMakeIndexUnique,
+             List::create(Named("x"), Named("eps")),
+             "Make the POSIXt index unique by separating by 'eps'");
+    
+    function("xtsMakeUnique",
+             &xtsMakeIndexUnique,
+             List::create(Named("x"), Named("eps")),
+             "Make the POSIXt index unique by separating by 'eps'");
+
+    function("xtsEndpoints",
+             &xtsEndpoints,
+             List::create(Named("x"), Named("on"), Named("k"), Named("addlast")),
+             "Create a series of end points given a time index");
+
+    function("xtsMerge",
+             &xtsMerge,
+             List::create(Named("x"), Named("y"), Named("all"), Named("fill"), Named("retclass"),
+                          Named("colnames"), Named("suffixes"), Named("retside"),
+                          Named("env"), Named("coerce")),
+             "Merge two series");
+
+    function("xtsNaOmit",
+             &xtsNaOmit,
+             List::create(Named("x")),
+             "Omit NA values");
+
+    // -- this requires xts 0.9-6 or later (fixed in SVN)
+    // function("xtsNaLocf",
+    //          &xtsNaLocf,
+    //          List::create(Named("x"), Named("fromLast"), Named("maxgap"), Named("limit")),
+    //          "Fill NA values by carrying last observation forward");
+
 }

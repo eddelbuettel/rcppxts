@@ -1,3 +1,8 @@
+2013-06-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/xtsMod.cpp: Added a more functions now that xts 0.9-5 is on CRAN
+	* tests/check.R: Added some illustrations / tests as well
+
 2013-01-18  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version): 0.0.4

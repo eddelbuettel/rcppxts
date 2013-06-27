@@ -2,9 +2,16 @@
 \title{News for Package \pkg{RcppXts}}
 \newcommand{\cpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.0.5 (2013-xx-yy)}{
+  \itemize{
+    \item Depends on \cpkg{xts} 0.9-5 now on CRAN
+    \item Exports a number of additional functions
+  }
+}
+
 \section{Changes in version 0.0.4 (2013-01-18)}{
   \itemize{
-    \item Depends on (unreleased) \cpkg{xts} 0.9-2 now on CRAN
+    \item Depends on \cpkg{xts} 0.9-2 now on CRAN
   }
 }
 
