@@ -1,7 +1,7 @@
 Package: RcppXts
 Type: Package
 Title: Interface the xts API via Rcpp
-Version: 0.0.4
+Version: 0.0.4.1
 Date: $Date$
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>

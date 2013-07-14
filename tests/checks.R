@@ -1,4 +1,8 @@
 
+## The function calls just validate that by going via RcppXts to xts, we still obtain
+## the same xts functionality.  The main purpose of this package is still to access xts
+## functionality while at the C++ layer.
+
 library(RcppXts)
 
 options("digits.secs"=6)
@@ -31,11 +35,18 @@ X  <- xts(1:20, order.by=Sys.time()+(0:19)*60)
 xtsEndpoints(index(X), 60L, 4, TRUE)     # every fourth minute, incl last
 xtsEndpoints(index(X), 60L, 4, FALSE)    # every fourth minute
 
-xtsMerge(X, X2, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
+#stop("now")
+#xtsMerge(X, X2, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
+Y <- 2*X
+#index(Y) <- index(Y) + runif(length(X)) * 0.01
+#xtsMerge(X, Y, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
 
-Y2 <- Y
+Y2 <- Y[1:10]
 Y2[2] <- NA
 xtsNaOmit(Y2)
+
+xtsMerge(X, X, c(TRUE,TRUE), TRUE, TRUE, c("a", "b"), NULL, TRUE, new.env(), 0)
+
 
 ## -- requires xts 0.9-6 (fixed in SVN)
 ## Y2 <- X2

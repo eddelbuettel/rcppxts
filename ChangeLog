@@ -1,3 +1,7 @@
+2013-07-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* man/RcppXts-package.Rd: Added some documentation for new functions
+
 2013-06-26  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/xtsMod.cpp: Added a more functions now that xts 0.9-5 is on CRAN
