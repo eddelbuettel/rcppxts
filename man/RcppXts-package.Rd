@@ -13,6 +13,7 @@
 \alias{xtsMakeUnique}
 \alias{xtsMerge}
 \alias{xtsNaOmit}
+\alias{xtsNaLocf},
 \docType{package}
 \title{Interface to the C API of xts}
 \description{This package helps with an Rcpp-based interface to the API
@@ -30,6 +31,7 @@
   xtsMakeUnique(x, eps)
   xtsMerge(x, y, all, fill, retclass, colnames, suffixes, retside, env, coerce)
   xtsNaOmit(x)
+  xtsNaLocf(x, fromLast, maxgap, limit)
 }
 \arguments{
   \item{x}{an \code{xts} object}
@@ -40,7 +42,6 @@
   \item{dup}{a boolean switch whether to remove duplicates}
   \item{k}{an integer denoting lag length, or interval}
   \item{pad}{a boolean switch whether to pad}
-
   \item{on}{a numeric value for desired distance, measure in seconds, between endpoints}
   \item{addlast}{a boolean switch whether last value should be included}
   \item{eps}{a numeric value for the desired minimal difference between elements}
@@ -56,6 +57,12 @@
     dimension if these need to be set}
   \item{env}{an environment, possibly empty}
   \item{coerce}{an integer value indicating if coercion should be forced}
+  \item{fromLast}{a boolean variable indicating whether observations
+    should be carried backward rather than forward; default FALSE}
+  \item{maxgap}{a double indicating the maximum number of NAs to be
+    retained; default is Inf}
+  \item{limit}{a double value for the limit of consecutive NA values;
+    default is Inf}
 }
 \details{Please use the \pkg{xts} sources as the ultimate reference for
   these variables. The R functions in package \pkg{xts} set some of

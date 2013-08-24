@@ -98,9 +98,9 @@ RCPP_MODULE(xts) {
              "Omit NA values");
 
     // -- this requires xts 0.9-6 or later (fixed in SVN)
-    // function("xtsNaLocf",
-    //          &xtsNaLocf,
-    //          List::create(Named("x"), Named("fromLast"), Named("maxgap"), Named("limit")),
-    //          "Fill NA values by carrying last observation forward");
+    function("xtsNaLocf",
+             &xtsNaLocf,
+             List::create(Named("x"), Named("fromLast"), Named("maxgap"), Named("limit")),
+             "Fill NA values by carrying last observation forward");
 
 }
