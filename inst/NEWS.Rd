@@ -4,7 +4,7 @@
 
 \section{Changes in version 0.0.5 (2013-xx-yy)}{
   \itemize{
-    \item Depends on \cpkg{xts} 0.9-5 now on CRAN
+    \item Depends on \cpkg{xts} 0.9-6 now on CRAN
     \item Exports a number of additional functions
   }
 }
