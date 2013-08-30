@@ -87,9 +87,9 @@ RCPP_MODULE(xts) {
 
     function("xtsMerge",
              &xtsMerge,
-             List::create(Named("x"), Named("y"), Named("all"), Named("fill"), Named("retclass"),
-                          Named("colnames"), Named("suffixes"), Named("retside"),
-                          Named("env"), Named("coerce")),
+             List::create(Named("x"), Named("y"), Named("all"), Named("fill"), 
+                          Named("retclass"), Named("colnames"), Named("suffixes"), 
+                          Named("retside"), Named("env"), Named("coerce")),
              "Merge two series");
 
     function("xtsNaOmit",
@@ -97,7 +97,7 @@ RCPP_MODULE(xts) {
              List::create(Named("x")),
              "Omit NA values");
 
-    // -- this requires xts 0.9-6 or later (fixed in SVN)
+    // -- this requires xts 0.9-7 or later 
     function("xtsNaLocf",
              &xtsNaLocf,
              List::create(Named("x"), Named("fromLast"), Named("maxgap"), Named("limit")),

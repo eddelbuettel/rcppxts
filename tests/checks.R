@@ -35,8 +35,6 @@ X  <- xts(1:20, order.by=Sys.time()+(0:19)*60)
 xtsEndpoints(index(X), 60L, 4, TRUE)     # every fourth minute, incl last
 xtsEndpoints(index(X), 60L, 4, FALSE)    # every fourth minute
 
-#stop("now")
-#xtsMerge(X, X2, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
 Y <- 2*X
 #index(Y) <- index(Y) + runif(length(X)) * 0.01
 #xtsMerge(X, Y, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
@@ -47,9 +45,7 @@ xtsNaOmit(Y2)
 
 xtsMerge(X, X, c(TRUE,TRUE), TRUE, TRUE, c("a", "b"), NULL, TRUE, new.env(), 0)
 
-
-## -- requires xts 0.9-6 (fixed in SVN)
-## Y2 <- X2
-## Y2[3] <- NA
-## Y2
-## xtsNaLocf(Y2, FALSE, 1, Inf)
+Y2 <- X2
+Y2[3] <- NA
+Y2
+xtsNaLocf(Y2, FALSE, 1, Inf)

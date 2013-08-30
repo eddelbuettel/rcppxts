@@ -13,7 +13,7 @@
 \alias{xtsMakeUnique}
 \alias{xtsMerge}
 \alias{xtsNaOmit}
-\alias{xtsNaLocf},
+\alias{xtsNaLocf}
 \docType{package}
 \title{Interface to the C API of xts}
 \description{This package helps with an Rcpp-based interface to the API
