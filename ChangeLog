@@ -1,3 +1,15 @@
+2016-05-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Minor edits to catch upto current CRAN standards
+
+	* README.md: Expanded and updated with more badges and new sections
+
+	* .travis.yml: Updated, faster via r-cran-rcpp and r-cran-xts binaries
+
+2014-02-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .travis.yml: Added
+
 2013-10-22  Dirk Eddelbuettel  <edd@debian.org>
 
 	* NAMESPACE: Minor cleanup
