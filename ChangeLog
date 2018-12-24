@@ -1,3 +1,7 @@
+2018-12-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* NAMESPACE: Add .registration=TRUE to useDynLib()
+
 2017-08-26  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .travis.yml: Updated to use run.sh from r-travis
@@ -24,7 +28,7 @@
 
 2013-06-26  Dirk Eddelbuettel  <edd@debian.org>
 
-	* src/xtsMod.cpp: Added a more functions now that xts 0.9-5 is on CRAN
+	* src/xtsMod.cpp: Added more functions now that xts 0.9-5 is on CRAN
 	* tests/check.R: Added some illustrations / tests as well
 
 2013-01-18  Dirk Eddelbuettel  <edd@debian.org>
