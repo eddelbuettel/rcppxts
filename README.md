@@ -1,6 +1,10 @@
-## RcppXts [![Build Status](https://travis-ci.org/eddelbuettel/rcppxts.png)](https://travis-ci.org/eddelbuettel/rcppxts) [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/RcppXts)](https://cran.r-project.org/package=RcppXts) [![Downloads](http://cranlogs.r-pkg.org/badges/RcppXts?color=brightgreen)](http://www.r-pkg.org/pkg/RcppXts)
+## RcppXts: Rcpp interface to xts
 
-Rcpp interface to xts
+[![Build Status](https://travis-ci.org/eddelbuettel/rcppxts.png)](https://travis-ci.org/eddelbuettel/rcppxts) 
+[![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
+[![CRAN](http://www.r-pkg.org/badges/version/RcppXts)](https://cran.r-project.org/package=RcppXts) 
+[![Downloads](http://cranlogs.r-pkg.org/badges/RcppXts?color=brightgreen)](http://www.r-pkg.org/pkg/RcppXts)
+[![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppxts)](https://github.com/eddelbuettel/rcppxts)
 
 ### About
 
