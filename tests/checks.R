@@ -25,7 +25,7 @@ xtsLag(Y, 2L, TRUE)
 Y <- X
 index(Y)[2] <- index(Y)[3]
 Y
-xtsMakeIndexUnique(Y, 0.001)
+#xtsMakeIndexUnique(Y, 0.001)
 
 Y <- X
 index(Y)[2] <- index(Y)[3]
@@ -43,7 +43,7 @@ Y2 <- Y[1:10]
 Y2[2] <- NA
 xtsNaOmit(Y2)
 
-xtsMerge(X, X, c(TRUE,TRUE), TRUE, TRUE, c("a", "b"), NULL, TRUE, new.env(), 0)
+#xtsMerge(X, X, c(TRUE,TRUE), TRUE, TRUE, c("a", "b"), NULL, TRUE, new.env(), 0)
 
 Y2 <- X2
 Y2[3] <- NA

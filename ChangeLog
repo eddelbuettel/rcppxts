@@ -2,6 +2,8 @@
 
 	* README.md: Add a 'last commit' badge
 
+	* tests/checks.R: Comment-out two checks for now
+
 2018-12-24  Dirk Eddelbuettel  <edd@debian.org>
 
 	* NAMESPACE: Add .registration=TRUE to useDynLib()
