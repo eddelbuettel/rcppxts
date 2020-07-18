@@ -29,7 +29,8 @@
   xtsEndpoints(x, on, k, addlast)
   xtsMakeIndexUnique(x, eps)
   xtsMakeUnique(x, eps)
-  xtsMerge(x, y, all, fill, retclass, colnames, suffixes, retside, env, coerce)
+  xtsMerge(x, y, all, fill, retclass, colnames, suffixes, retside,
+           check_names,env, coerce)
   xtsNaOmit(x)
   xtsNaLocf(x, fromLast, maxgap, limit)
 }
@@ -55,6 +56,7 @@
   \item{suffixes}{a character vector with column name suffixes; default is NULL}
   \item{retside}{a boolean switch of size two for the desired return
     dimension if these need to be set}
+  \item{check_names}{a boolean switch to enable name checking}
   \item{env}{an environment, possibly empty}
   \item{coerce}{an integer value indicating if coercion should be forced}
   \item{fromLast}{a boolean variable indicating whether observations
