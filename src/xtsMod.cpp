@@ -89,7 +89,8 @@ RCPP_MODULE(xts) {
              &xtsMerge,
              List::create(Named("x"), Named("y"), Named("all"), Named("fill"), 
                           Named("retclass"), Named("colnames"), Named("suffixes"), 
-                          Named("retside"), Named("env"), Named("coerce")),
+                          Named("retside"), Named("check_names"), Named("env"),
+                          Named("coerce")),
              "Merge two series");
 
     function("xtsNaOmit",
