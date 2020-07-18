@@ -25,7 +25,7 @@ xtsLag(Y, 2L, TRUE)
 Y <- X
 index(Y)[2] <- index(Y)[3]
 Y
-#xtsMakeIndexUnique(Y, 0.001)
+xtsMakeIndexUnique(Y, 0.00001)
 
 Y <- X
 index(Y)[2] <- index(Y)[3]
@@ -36,14 +36,16 @@ xtsEndpoints(index(X), 60L, 4, TRUE)     # every fourth minute, incl last
 xtsEndpoints(index(X), 60L, 4, FALSE)    # every fourth minute
 
 Y <- 2*X
-#index(Y) <- index(Y) + runif(length(X)) * 0.01
-#xtsMerge(X, Y, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
+index(Y) <- index(Y) + runif(length(X)) * 0.01
+## xtsMerge in xtsAPI one argument short of signature: 9 != 10
+##xtsMerge(X, Y, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
 
 Y2 <- Y[1:10]
 Y2[2] <- NA
 xtsNaOmit(Y2)
 
-#xtsMerge(X, X, c(TRUE,TRUE), TRUE, TRUE, c("a", "b"), NULL, TRUE, new.env(), 0)
+## xtsMerge in xtsAPI one argument short of signature: 9 != 10
+##xtsMerge(X, X, TRUE, TRUE, TRUE, c("a", "b"), NULL, TRUE, FALSE, new.env(), 0L)
 
 Y2 <- X2
 Y2[3] <- NA
