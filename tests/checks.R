@@ -37,15 +37,13 @@ xtsEndpoints(index(X), 60L, 4, FALSE)    # every fourth minute
 
 Y <- 2*X
 index(Y) <- index(Y) + runif(length(X)) * 0.01
-## xtsMerge in xtsAPI one argument short of signature: 9 != 10
-##xtsMerge(X, Y, c(TRUE,TRUE), TRUE, TRUE, "a", "b", TRUE, new.env(), 0)
+xtsMerge(X, Y, TRUE, TRUE, TRUE, c("a", "b"), NULL, TRUE, FALSE, new.env(), 0)
 
 Y2 <- Y[1:10]
 Y2[2] <- NA
 xtsNaOmit(Y2)
 
-## xtsMerge in xtsAPI one argument short of signature: 9 != 10
-##xtsMerge(X, X, TRUE, TRUE, TRUE, c("a", "b"), NULL, TRUE, FALSE, new.env(), 0L)
+xtsMerge(X, X, TRUE, TRUE, TRUE, c("a", "b"), NULL, TRUE, FALSE, new.env(), 0L)
 
 Y2 <- X2
 Y2[3] <- NA
