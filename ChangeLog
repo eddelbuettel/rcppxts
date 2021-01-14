@@ -1,3 +1,12 @@
+2020-07-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/xtsMod.cpp: Add 'check_names' argument to xtsMerge
+	* man/RcppXts-package.Rd: Document it
+
+	* tests/checks.R: Tweak, but still skip xtsMerge example
+
+	* src/init.c: Added to register Rcpp Modules 'boot' routine
+
 2020-06-23  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll minor version and date
