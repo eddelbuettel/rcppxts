@@ -1,6 +1,7 @@
 ## RcppXts: Rcpp interface to xts
 
 [![Build Status](https://travis-ci.org/eddelbuettel/rcppxts.png)](https://travis-ci.org/eddelbuettel/rcppxts) 
+[![CI](https://github.com/eddelbuettel/rcppxts/workflows/ci/badge.svg)](https://github.com/eddelbuettel/rcppxts/actions?query=workflow%3Aci)
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](http://www.r-pkg.org/badges/version/RcppXts)](https://cran.r-project.org/package=RcppXts) 
 [![Downloads](http://cranlogs.r-pkg.org/badges/RcppXts?color=brightgreen)](http://www.r-pkg.org/pkg/RcppXts)
