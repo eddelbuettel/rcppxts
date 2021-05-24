@@ -8,6 +8,8 @@ Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: Access to some of the C level functions of the 'xts' package.  
  In its current state, the package is mostly a proof-of-concept to support
  adding useful functions, and does not yet add any of its own.
+URL: https://github.com/eddelbuettel/rcppxts, https://dirk.eddelbuettel.com/code/rcpp.xts.html
+BugReports: https://github.com/eddelbuettel/rcppxts/issues
 License: GPL (>= 2)
 Depends: xts (>= 0.9-6)
 Imports: methods, Rcpp (>= 0.10.2)
