@@ -8,7 +8,7 @@
 */
 
 /* .Call calls */
-extern SEXP _rcpp_module_boot_xts();
+extern SEXP _rcpp_module_boot_xts(void);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rcpp_module_boot_xts",   (DL_FUNC) &_rcpp_module_boot_xts,   0},
