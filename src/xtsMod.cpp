@@ -68,7 +68,7 @@ RCPP_MODULE(xts) {
     function("xtsLag",
              &xtsLag,
              List::create(Named("x"), Named("k"), Named("pad")),
-             "Extract the coredata from xts object");
+             "Lags the xts object by 'k' periods padding with 'pad'");
 
     function("xtsMakeIndexUnique",
              &xtsMakeIndexUnique,
