@@ -3,8 +3,8 @@ Type: Package
 Title: Interface the 'xts' API via 'Rcpp'
 Version: 0.0.6
 Date: 2022-11-01
-Author: Dirk Eddelbuettel
-Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Authors@R: person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org", 
+                  comment = c(ORCID = "0000-0001-6419-907X"))
 Description: Access to some of the C level functions of the 'xts' package.  
  In its current state, the package is mostly a proof-of-concept to support
  adding useful functions, and does not yet add any of its own.
