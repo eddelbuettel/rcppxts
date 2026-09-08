@@ -1,5 +1,7 @@
 2026-09-08  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll micro version and date
+
 	* README.md: Add badges for dependencies and r-universe
 
 	* src/Makevars: Removed as defaults have long been sufficient
