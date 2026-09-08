@@ -2,6 +2,9 @@
 
 	* README.md: Add badges for dependencies and r-universe
 
+	* src/Makevars: Removed as defaults have long been sufficient
+	* src/Makevars.win: Idem
+
 	* .github/workflows/ci.yaml: Switch to actions/checkout@v7
 
 2026-01-28  Dirk Eddelbuettel  <edd@debian.org>
