@@ -1,5 +1,7 @@
 2026-09-08  Dirk Eddelbuettel  <edd@debian.org>
 
+	* README.md: Add badges for dependencies and r-universe
+
 	* .github/workflows/ci.yaml: Switch to actions/checkout@v7
 
 2026-01-28  Dirk Eddelbuettel  <edd@debian.org>
