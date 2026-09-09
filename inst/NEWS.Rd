@@ -2,7 +2,16 @@
 \title{News for Package \pkg{RcppXts}}
 \newcommand{\cpkg}{\href{https://CRAN.R-project.org/package=#1}{\pkg{#1}}}
 
-\section{Changes in version 0.0.6 (2022-08-05)}{
+\section{Changes in version 0.0.7 (2026-09-09)}{
+  \itemize{
+    \item Corrected a docstring for the module
+    \item Updated continuous integration setup several times
+    \item Simplified setup by removing no-longer-needed Makevars
+    \item Added badges to README.md
+  }
+}
+
+\section{Changes in version 0.0.6 (2022-11-01)}{
   \itemize{
     \item One function prototype was updated for \code{clang-15}.
     \item GitHub Actions were updated to checkout version 3.
